@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# 模型权重（仅最佳模型经 Git LFS 上传）
+*.pth
+!dyendovo_output/final_model.pth
+!dyendovo_output/best_model.pth
+*.pt
+*.ckpt
+*.onnx
+
+# 数据与中间产物
+*.npz
+*.npy
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.avi
+*.pdf
+*.log
+*.blend
+*.blend1
+*.rar
+*.zip
+*.7z
+*.pkl
+*.obj
+*.stl
+*.mtl
+
+# IDE / 系统
+.idea/
+.vscode/
+.qoder/
+.DS_Store
+Thumbs.db

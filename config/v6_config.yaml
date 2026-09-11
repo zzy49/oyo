@@ -1,0 +1,32 @@
+# V6管线配置文件
+# 相机内参
+camera:
+  fx: 500.0
+  fy: 500.0
+  cx: 640.0
+  cy: 360.0
+
+# 数据路径
+data:
+  image_dir: "E:\\data1\\monodepth2\\cs\\2"
+  model_path: "C:\\Users\\Administrator\\tmp\\endo_v3_stage2_v3\\models\\weights_19"
+  output_dir: "E:\\data1\\monodepth2\\v6_cs2_test"
+
+# V6管线参数
+pipeline:
+  n_frames: 5
+  min_static_ratio: 0.05
+  motion_threshold: 2.0
+  reprojection_error: 8.0
+
+# 回环检测参数
+loop_closure:
+  keyframe_interval: 10
+  min_frame_gap: 30
+  min_matches: 25
+
+# BA优化参数
+bundle_adjustment:
+  weight_sequential: 1.0
+  weight_loop: 2.0
+  weight_smooth: 0.3
