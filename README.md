@@ -20,27 +20,6 @@ Built on a five-stage pipeline: depth estimation → feature matching → static
 4. **Pose solving** — EPnP estimates the relative pose; a two-level scale correction (global scale back-inference + `pnp_scale` refinement) restores absolute scale.
 5. **Scale correction & decoupling** — inter-frame depth-consistency correction suppresses scale drift; subtracting camera-induced apparent motion yields tissue motion, quantified in absolute 3D.
 
-## Key Results
-
-Depth/VO comparison on the C3VDv2 colonoscopy benchmark (unified backend, depth method replaced):
-
-| Method | ATE (mm) ↓ | RPE-R (°) ↓ | Scale Error ↓ | Success |
-|--------|-----------|------------|---------------|---------|
-| Monodepth2 | 7.12 | 0.35 | 55 % | — |
-| ManyDepth  | —     | 2.06 | —             | — |
-| Lite-Mono  | —     | —     | 198 %         | — |
-| **Ours**   | **5.08** | **0.43** | **25 %** | **100 %** |
-
-> Baseline absolute values above are indicative; please cross-check against Table 1 of the paper before publication.
-
-Camera-pose comparison on public benchmarks (5-frame-window ATE, mean ± std, mm):
-
-| Method | SCARED | EndoSLAM |
-|--------|--------|----------|
-| AF-SfMLearner | **46.65±27.52** | 2.66±1.52 |
-| Endo-FASt3r   | 46.68±27.54 | 2.39±1.46 |
-| BodySLAM      | 48.63±29.11 | 0.80±0.48 |
-| **Ours**      | 49.28±29.36 | **0.64±0.18** |
 
 ## Repository Structure
 
